@@ -52,10 +52,12 @@ const modules = {
       }
     },
     alias({
-      'react-redux': join(__dirname, 'node_modules/react-redux/src/index.js'),
+      'react-redux': join(__dirname, 'node_modules/react-redux/es/index.js'),
       react: 'nervjs',
+      'react-dom': 'nervjs',
       invariant: join(__dirname, '/src/invariant.js'),
-      'prop-types': join(__dirname, '/src/prop-types.js')
+      'prop-types': join(__dirname, '/src/prop-types.js'),
+      'react-is': join(process.cwd(), '../nerv-is/dist/index')
     }),
     babel({
       babelrc: false,

@@ -55,22 +55,15 @@ const sauceLabsLaunchers = {
     version: '9.0',
     platform: 'Windows 7'
   },
-  sl_ie_8: {
-    base: 'SauceLabs',
-    browserName: 'internet explorer',
-    version: '8.0',
-    platform: 'Windows 7'
-  },
   sl_ios_safari_9: {
     base: 'SauceLabs',
     browserName: 'iphone',
     version: '10.3'
   },
-  'SL_ANDROID4.4': {
+  sl_ios_safari_12: {
     base: 'SauceLabs',
-    browserName: 'android',
-    platform: 'Linux',
-    version: '4.4'
+    browserName: 'iphone',
+    version: '12.2'
   },
   SL_ANDROID5: {
     base: 'SauceLabs',
@@ -78,11 +71,11 @@ const sauceLabsLaunchers = {
     platform: 'Linux',
     version: '5.1'
   },
-  SL_ANDROID6: {
+  SL_ANDROID8: {
     base: 'SauceLabs',
     browserName: 'Chrome',
     platform: 'Android',
-    version: '6.0',
+    version: '8.0',
     device: 'Android Emulator'
   }
 }
@@ -110,6 +103,7 @@ module.exports = function (config) {
       'browsers/karma.js',
       './node_modules/es6-promise/dist/es6-promise.auto.min.js',
       './node_modules/es5-polyfill/dist/polyfill.js',
+      './node_modules/es6-object-assign/dist/object-assign-auto.min.js',
       'browsers/ie8.js',
       'browsers/polyfill.js',
       'packages/*/__tests__/**/*spec.js?(x)'
@@ -128,7 +122,7 @@ module.exports = function (config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'packages/*/__tests__/**/*spec.js?(x)': ['webpack', 'sourcemap']
+      'packages/*/__tests__/**/*spec.js?(x)': ['webpack']
     },
 
     // test results reporter to use
@@ -174,7 +168,7 @@ module.exports = function (config) {
     concurrency: 1,
 
     webpack: {
-      devtool: 'inline-source-map',
+      // devtool: 'inline-source-map',
       resolve: {
         alias: {
           nervjs: resolve('nerv'),

@@ -10,7 +10,6 @@
     "precommit": "npm run lint && npm run lint-staged",
     "prepush": "npm run test",
     "postinstall": "lerna bootstrap",
-    "prepublish": "npm run build",
     "clean": "lerna exec -- rimraf dist",
     "lint": "tslint -p tsconfig.json --type-check",
     "lint-staged": "lint-staged",
@@ -70,6 +69,7 @@
     "dts-bundle": "^0.7.3",
     "es3ify-webpack-plugin": "^0.0.1",
     "es5-polyfill": "0.0.5",
+    "es6-object-assign": "^1.1.0",
     "es6-promise": "^4.1.1",
     "eslint": "^3.19.0",
     "eslint-config-standard": "^10.2.1",
@@ -84,7 +84,7 @@
     "is-ci": "^1.0.10",
     "jasmine-core": "^2.8.0",
     "jest": "^21.2.1",
-    "karma": "^1.7.1",
+    "karma": "^4.1.0",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.0",
     "karma-jasmine-diff-reporter": "^1.1.1",
@@ -115,7 +115,7 @@
     "ts-jest": "^21.1.2",
     "ts-loader": "^3.2.0",
     "tslint": "^5.7.0",
-    "typescript": "^2.4.2",
+    "typescript": "^3.3.3333",
     "webpack": "^3.7.1"
   }
 }
